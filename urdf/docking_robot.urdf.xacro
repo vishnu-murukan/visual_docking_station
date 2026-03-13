@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="docking_robot">
+
+  <!-- Base footprint -->
+  <link name="base_footprint"/>
+
+  <!-- Base link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.15" length="0.1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.2 0.2 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.15" length="0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.00208" ixy="0.0" ixz="0.0"
+               iyy="0.00208" iyz="0.0" izz="0.00375"/>
+    </inertial>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.06"/>
+  </joint>
+
+  <!-- Camera link -->
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <box size="0.03 0.08 0.03"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.08 0.03"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.15 0 0.08" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Camera optical frame -->
+  <link name="camera_optical_frame"/>
+  
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_optical_frame"/>
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+  </joint>
+
+  <!-- Left wheel -->
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.033" length="0.018"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <material name="dark_grey">
+        <color rgba="0.3 0.3 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.033" length="0.018"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 0.16 -0.027" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Right wheel -->
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.033" length="0.018"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <material name="dark_grey">
+        <color rgba="0.3 0.3 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.033" length="0.018"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -0.16 -0.027" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Caster wheel -->
+  <link name="caster">
+    <visual>
+      <geometry>
+        <sphere radius="0.017"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.017"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <joint name="caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster"/>
+    <origin xyz="-0.10 0 -0.043" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Gazebo plugins -->
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>0.32</wheel_separation>
+      <wheel_radius>0.033</wheel_radius>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <topic>/cmd_vel</topic>
+      <odom_topic>/odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_footprint</child_frame_id>
+    </plugin>
+  </gazebo>
+
+  <!-- Camera sensor -->
+  <gazebo reference="camera_link">
+    <sensor name="camera" type="camera">
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <visualize>true</visualize>
+      <topic>camera/image_raw</topic>
+    </sensor>
+  </gazebo>
+
+  <!-- Friction definitions -->
+  <gazebo reference="left_wheel">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="right_wheel">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="caster">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
+
+</robot>
