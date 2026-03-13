@@ -1,0 +1,109 @@
+[0.011s] Invoking command in '/home/adarsh/Downloads/files/build/visual_docking': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/adarsh/Downloads/files -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/adarsh/Downloads/files/install/visual_docking
+[0.119s] -- The C compiler identification is GNU 13.3.0
+[0.207s] -- The CXX compiler identification is GNU 13.3.0
+[0.225s] -- Detecting C compiler ABI info
+[0.319s] -- Detecting C compiler ABI info - done
+[0.325s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.326s] -- Detecting C compile features
+[0.326s] -- Detecting C compile features - done
+[0.337s] -- Detecting CXX compiler ABI info
+[0.432s] -- Detecting CXX compiler ABI info - done
+[0.438s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.438s] -- Detecting CXX compile features
+[0.439s] -- Detecting CXX compile features - done
+[0.447s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.567s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.632s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.689s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.744s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.760s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.781s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.801s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.884s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.888s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.994s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.013s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.031s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.106s] -- Found rclpy: 7.1.9 (/opt/ros/jazzy/share/rclpy/cmake)
+[1.110s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.124s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[1.138s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.160s] -- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[1.184s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[1.202s] -- Found image_transport: 5.1.7 (/opt/ros/jazzy/share/image_transport/cmake)
+[1.237s] -- Found tf2: 0.36.19 (/opt/ros/jazzy/share/tf2/cmake)
+[1.243s] -- Found tf2_ros: 0.36.19 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[1.357s] -- Found tf2_geometry_msgs: 0.36.19 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[1.380s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[1.380s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.381s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.460s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.565s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.571s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.571s] -- Configured cppcheck include dirs: 
+[1.571s] -- Configured cppcheck exclude dirs and/or files: 
+[1.577s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.577s] -- Configured cpplint exclude dirs and/or files: 
+[1.578s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.578s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.580s] -- Added test 'lint_cmake' to check CMake code style
+[1.581s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.588s] -- Added test 'uncrustify' to check C / C++ code style
+[1.588s] -- Configured uncrustify additional arguments: 
+[1.589s] -- Added test 'xmllint' to check XML markup files
+[1.591s] -- Configuring done (1.6s)
+[1.597s] -- Generating done (0.0s)
+[1.599s] -- Build files have been written to: /home/adarsh/Downloads/files/build/visual_docking
+[1.609s] Invoked command in '/home/adarsh/Downloads/files/build/visual_docking' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/adarsh/Downloads/files -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/adarsh/Downloads/files/install/visual_docking
+[1.611s] Invoking command in '/home/adarsh/Downloads/files/build/visual_docking': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/adarsh/Downloads/files/build/visual_docking -- -j16 -l16
+[1.669s] Built target ament_cmake_python_symlink_visual_docking
+[1.820s] running egg_info
+[1.820s] creating visual_docking.egg-info
+[1.832s] writing visual_docking.egg-info/PKG-INFO
+[1.832s] writing dependency_links to visual_docking.egg-info/dependency_links.txt
+[1.832s] writing top-level names to visual_docking.egg-info/top_level.txt
+[1.832s] writing manifest file 'visual_docking.egg-info/SOURCES.txt'
+[1.868s] reading manifest file 'visual_docking.egg-info/SOURCES.txt'
+[1.869s] writing manifest file 'visual_docking.egg-info/SOURCES.txt'
+[1.890s] Built target ament_cmake_python_build_visual_docking_egg
+[1.902s] Invoked command in '/home/adarsh/Downloads/files/build/visual_docking' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/adarsh/Downloads/files/build/visual_docking -- -j16 -l16
+[1.912s] Invoking command in '/home/adarsh/Downloads/files/build/visual_docking': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/adarsh/Downloads/files/build/visual_docking
+[1.920s] -- Install configuration: ""
+[1.920s] -- Execute custom install script
+[1.920s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/environment/pythonpath.sh
+[1.929s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/environment/pythonpath.dsv
+[1.938s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/lib/python3.12/site-packages/visual_docking-2.0.0-py3.12.egg-info/PKG-INFO
+[1.948s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/lib/python3.12/site-packages/visual_docking-2.0.0-py3.12.egg-info/SOURCES.txt
+[1.957s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/lib/python3.12/site-packages/visual_docking-2.0.0-py3.12.egg-info/dependency_links.txt
+[1.966s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/lib/python3.12/site-packages/visual_docking-2.0.0-py3.12.egg-info/top_level.txt
+[1.974s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/lib/python3.12/site-packages/visual_docking/__init__.py
+[1.982s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/lib/visual_docking/aruco_detector_node.py
+[1.991s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/lib/visual_docking/dock_controller.py
+[1.999s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/lib/visual_docking/generate_aruco_marker.py
+[2.008s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//launch/docking_simulation.launch.py
+[2.017s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//config/aruco_params.yaml
+[2.025s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//worlds/room_world.sdf
+[2.034s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//models/aruco_marker/meshes/aruco_marker.png
+[2.042s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//models/aruco_marker/model.config
+[2.051s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//models/aruco_marker/model.sdf
+[2.062s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//models/docking_robot/model.config
+[2.071s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//models/docking_robot/model.sdf
+[2.080s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking//urdf/docking_robot.urdf.xacro
+[2.089s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/ament_index/resource_index/package_run_dependencies/visual_docking
+[2.098s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/ament_index/resource_index/parent_prefix_path/visual_docking
+[2.107s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/environment/ament_prefix_path.sh
+[2.115s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/environment/ament_prefix_path.dsv
+[2.123s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/environment/path.sh
+[2.130s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/environment/path.dsv
+[2.138s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/local_setup.bash
+[2.148s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/local_setup.sh
+[2.157s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/local_setup.zsh
+[2.165s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/local_setup.dsv
+[2.174s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/package.dsv
+[2.182s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/ament_index/resource_index/packages/visual_docking
+[2.191s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/cmake/visual_dockingConfig.cmake
+[2.199s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/cmake/visual_dockingConfig-version.cmake
+[2.207s] -- Symlinking: /home/adarsh/Downloads/files/install/visual_docking/share/visual_docking/package.xml
+[2.253s] Listing '/home/adarsh/Downloads/files/install/visual_docking/lib/python3.12/site-packages/visual_docking'...
+[2.253s] Compiling '/home/adarsh/Downloads/files/install/visual_docking/lib/python3.12/site-packages/visual_docking/__init__.py'...
+[2.259s] Invoked command in '/home/adarsh/Downloads/files/build/visual_docking' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/adarsh/Downloads/files/build/visual_docking

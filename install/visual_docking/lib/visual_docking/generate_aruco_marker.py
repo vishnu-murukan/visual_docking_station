@@ -1,0 +1,1 @@
+/home/adarsh/Downloads/files/scripts/generate_aruco_marker.py

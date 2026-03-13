@@ -1,0 +1,1 @@
+/home/adarsh/Downloads/files/scripts/aruco_detector_node.py
